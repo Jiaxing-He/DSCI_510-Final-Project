@@ -3,6 +3,10 @@ This project investigates whether longer user reviews are associated with more p
 
 # Data sources
 _describe all data sources used_ Copy and update the date table from your "Final project proposal" assignment.
+| Data Source# | Name / short description | Source URL | Type | List of Fields | Format | Access with python? | Estimated Data Size |
+|--------------|------------------|-----------|------|-------------|--------|----------|----------------|
+| 1 | Steam Reviews API | https://store.steampowered.com/appreviews/<appid> | API | review, voted_up, author.playtime_forever | JSON | Yes | 500 |
+
 
 # Results 
 _describe your findings_
