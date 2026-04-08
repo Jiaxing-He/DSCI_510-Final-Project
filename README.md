@@ -1,5 +1,5 @@
 # Sample Project <Project title>
-_brief project description here_
+This project investigates whether longer user reviews are associated with more positive ratings. The study will analyze review data from online platforms of different fields to examine the relationship between review length and rating scores. By applying statistical analysis and simple machine learning models, the project aims to determine whether longer reviews tend to be more positive and whether review length can serve as a predictor of sentiment.
 
 # Data sources
 _describe all data sources used_ Copy and update the date table from your "Final project proposal" assignment.
