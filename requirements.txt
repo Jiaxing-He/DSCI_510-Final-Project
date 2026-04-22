@@ -1,6 +1,7 @@
-numpy
+scipy
+requests
 pandas
-scikit-learn
 kaggle
 kagglehub
-python-dotenv
+langdetect
+re
