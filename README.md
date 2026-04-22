@@ -23,8 +23,6 @@ langdetect
 scipy
 
 # Running analysis 
-_update these instructions_
-
 From `src/` directory run:
 
 `python main.py `
