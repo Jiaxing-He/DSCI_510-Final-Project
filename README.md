@@ -2,9 +2,11 @@
 This project investigates whether longer user reviews are associated with more positive ratings. The study will analyze review data from online platforms of different fields to examine the relationship between review length and rating scores. By applying statistical analysis and simple machine learning models, the project aims to determine whether longer reviews tend to be more positive and whether review length can serve as a predictor of sentiment.
 
 # Data sources
-| Data Source# | Name / short description | Source URL | Type | List of Fields | Format | Access with python? | Estimated Data Size |
-|--------------|------------------|-----------|------|-------------|--------|----------|----------------|
-| 1 | Steam Reviews API | https://store.steampowered.com/appreviews/<appid> | API | review, voted_up, author.playtime_forever | JSON | Yes | 500 |
+| Data Source# | Name / short description | Source URL | Type | List of Fields | Format | Estimated Data Size |
+|--------------|------------------|-----------|------|-------------|--------|----------------|
+| 1 | Steam Reviews (ID: 570) | https://store.steampowered.com/appreviews/570 | API | review, label | JSON | 600 |
+| 2 | Steam Reviews (ID: 2868840) | https://store.steampowered.com/appreviews/2868840 | API | review, label | JSON | 600 |
+| 3 | Steam Reviews (ID: 1172470) | https://store.steampowered.com/appreviews/1172470 | API | review, label | JSON | 600 |
 
 
 # Results 
