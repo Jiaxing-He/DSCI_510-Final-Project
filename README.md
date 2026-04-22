@@ -17,9 +17,13 @@ Steam showed a significant negative relationship, while Amazon and IMDb’s resu
 The user must have kaggle API keys to run the project.
 
 Python packages:
+
 pandas
+
 kaggle
+
 langdetect
+
 scipy
 
 # Running analysis 
