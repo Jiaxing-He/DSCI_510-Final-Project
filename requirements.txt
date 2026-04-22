@@ -2,6 +2,4 @@ scipy
 requests
 pandas
 kaggle
-kagglehub
 langdetect
-re
