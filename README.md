@@ -7,7 +7,8 @@ This project investigates whether longer user reviews are associated with more p
 | 1 | Steam Reviews (ID: 570) | https://store.steampowered.com/appreviews/570 | API | review, label | JSON | 600 |
 | 2 | Steam Reviews (ID: 2868840) | https://store.steampowered.com/appreviews/2868840 | API | review, label | JSON | 600 |
 | 3 | Steam Reviews (ID: 1172470) | https://store.steampowered.com/appreviews/1172470 | API | review, label | JSON | 600 |
-
+| 4 | Amazon Fine Food Reviews | https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews | File | review, scoring | csv | 500,000 |
+| 5 | IMDB Movie Reviews | https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews| File | review, sentiment | csv | 50,000 |
 
 # Results 
 _describe your findings_
