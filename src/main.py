@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 import re
 from scipy.stats import pointbiserialr
 from amazon import amazon_reviews
@@ -13,7 +14,8 @@ from config import (AMAZON_FILE,
                     STEAM_TARGET_REVIEWS,
                     STEAM_APP_ID_1,
                     STEAM_APP_ID_2,
-                    STEAM_APP_ID_3)
+                    STEAM_APP_ID_3,
+                    DATA_DIR)
 
 def clean_text(text):
     if pd.isna(text):
@@ -111,10 +113,11 @@ def is_english(text):
         return False
 
 def main():
+    os.makedirs(DATA_DIR, exist_ok=True)
     steam_data = steam_reviews(app_id=STEAM_APP_ID_1, target_reviews=STEAM_TARGET_REVIEWS)
 
     steam_data = steam_data[steam_data["review"].apply(is_english)]
-    steam_data.to_csv(STEAM_FILE_1, encoding="utf-8-sig", index=False)
+    steam_data.to_csv(STEAM_FILE, encoding="utf-8-sig", index=False)
 
     amazon_data = amazon_reviews()
     amazon_data.to_csv(AMAZON_FILE, index=False)
