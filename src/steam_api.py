@@ -1,9 +1,9 @@
 import requests
 import pandas as pd
+from config import STEAM_REVIEW_API_URL
 
-# For target_reviews, the input should be multiple of 100
 def steam_reviews(app_id: int, target_reviews: int, language: str = "english"):
-    url = f"https://store.steampowered.com/appreviews/{app_id}"
+    url = f"{STEAM_REVIEW_API_URL}{app_id}"
     all_reviews = []
     negative_cursor = "*"
     positive_cursor = "*"

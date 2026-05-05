@@ -5,6 +5,15 @@ from amazon import amazon_reviews
 from imdb import imdb_reviews
 from steam_api import steam_reviews
 from langdetect import detect
+from config import (AMAZON_FILE,
+                    IMDB_FILE,
+                    STEAM_FILE,
+                    STEAM_FILE_1,
+                    STEAM_FILE_2,
+                    STEAM_TARGET_REVIEWS,
+                    STEAM_APP_ID_1,
+                    STEAM_APP_ID_2,
+                    STEAM_APP_ID_3)
 
 def clean_text(text):
     if pd.isna(text):
@@ -102,44 +111,35 @@ def is_english(text):
         return False
 
 def main():
-    app_id = 2868840
-    steam_data = steam_reviews(app_id=app_id, target_reviews=600)
+    steam_data = steam_reviews(app_id=STEAM_APP_ID_1, target_reviews=STEAM_TARGET_REVIEWS)
 
     steam_data = steam_data[steam_data["review"].apply(is_english)]
-    steam_data.to_csv("../data/steam_samples.csv", encoding="utf-8-sig", index=False)
+    steam_data.to_csv(STEAM_FILE_1, encoding="utf-8-sig", index=False)
 
     amazon_data = amazon_reviews()
-    amazon_data.to_csv("../data/amazon_samples.csv", index=False)
+    amazon_data.to_csv(AMAZON_FILE, index=False)
 
     imdb_data = imdb_reviews()
-    imdb_data.to_csv("../data/imdb_samples.csv", index=False)
+    imdb_data.to_csv(IMDB_FILE, index=False)
 
-    amazon_file = "../data/amazon_samples.csv"
-    imdb_file = "../data/imdb_samples.csv"
-    steam_file = "../data/steam_samples.csv"
-
-    amazon_df = load_amazon(amazon_file)
-    imdb_df = load_imdb(imdb_file)
-    steam_df = load_steam(steam_file)
+    amazon_df = load_amazon(AMAZON_FILE)
+    imdb_df = load_imdb(IMDB_FILE)
+    steam_df = load_steam(STEAM_FILE)
 
     analyze_dataset(amazon_df, "Amazon")
     analyze_dataset(imdb_df, "IMDb")
     analyze_dataset(steam_df, "Steam")
 
-    app_id_1 = 570
-    steam_data_1 = steam_reviews(app_id=app_id_1, target_reviews=600)
+    steam_data_1 = steam_reviews(app_id=STEAM_APP_ID_2, target_reviews=STEAM_TARGET_REVIEWS)
     steam_data_1 = steam_data_1[steam_data_1["review"].apply(is_english)]
-    steam_data_1.to_csv("../data/steam_samples_1.csv", encoding="utf-8-sig", index=False)
-    steam_file_1 = "../data/steam_samples_1.csv"
-    steam_df_1 = load_steam(steam_file_1)
+    steam_data_1.to_csv(STEAM_FILE_1, encoding="utf-8-sig", index=False)
+    steam_df_1 = load_steam(STEAM_FILE_1)
     analyze_dataset(steam_df_1, "Steam")
 
-    app_id_2 = 1172470
-    steam_data_2 = steam_reviews(app_id=app_id_2, target_reviews=600)
+    steam_data_2 = steam_reviews(app_id=STEAM_APP_ID_3, target_reviews=STEAM_TARGET_REVIEWS)
     steam_data_2 = steam_data_2[steam_data_2["review"].apply(is_english)]
-    steam_data_2.to_csv("../data/steam_samples_2.csv", encoding="utf-8-sig", index=False)
-    steam_file_2 = "../data/steam_samples_2.csv"
-    steam_df_2 = load_steam(steam_file_2)
+    steam_data_2.to_csv(STEAM_FILE_2, encoding="utf-8-sig", index=False)
+    steam_df_2 = load_steam(STEAM_FILE_2)
     analyze_dataset(steam_df_2, "Steam")
 
 if __name__ == "__main__":
